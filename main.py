@@ -293,16 +293,14 @@ def download_txt():
     if not current_report:
         return None
     file_path = export_to_txt(current_report)
-    with open(file_path, 'rb') as f:
-        return gr.File(content=f.read(), filename=os.path.basename(file_path))
+    return file_path
 
 def download_word():
     global current_report
     if not current_report:
         return None
     file_path = export_to_word(current_report)
-    with open(file_path, 'rb') as f:
-        return gr.File(content=f.read(), filename=os.path.basename(file_path))
+    return file_path
 
 def update_api_key(new_key):
     global API_KEY
